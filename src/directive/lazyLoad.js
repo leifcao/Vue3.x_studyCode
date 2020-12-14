@@ -27,8 +27,10 @@ const lazyload = {
       mounted(el) {
         // 兼容性绑定 chrome
         if (IntersectionObserver) {
+          // intersectionObserver 监听函数
           lazyload.Observe(el);
         } else {
+          // 滚动条浏览器监听
           lazyload.listenerScroll(el);
         }
       }
