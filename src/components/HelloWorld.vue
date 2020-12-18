@@ -61,6 +61,21 @@
     <img v-lazy="'src/assets/exampleImage/lazy2.jpg'" alt="">
     <img v-lazy="'src/assets/exampleImage/lazy3.jpg'" alt="">
 
+    <h2>directive---点击防抖</h2>
+    <p class="detail">使用指令的方式 v-debounce="event()" ，详情见文件src/directive/debounce.js</p>
+    <div>
+      <span>state.count :{{ state.count }}</span>&nbsp;<button v-debounce="countState">+1</button>
+
+    </div>
+
+    <h2>directive---拖拽</h2>
+    <p class="detail">使用指令的方式 v-draggable ，详情见文件src/directive/darggable.js</p>
+    <div class="parent" style="position:relative;background:cadetblue;height: 500px">
+      <div v-draggable style="position:absolute;width: 100px;height: 100px;background:cornflowerblue;">message</div>
+    </div>
+
+    <simple></simple>
+
   </div>
   <p class="bottom">Edit <code>components/HelloWorld.vue</code> to test hot module replacement.</p>
 </template>
@@ -70,6 +85,8 @@
   // 使用路由跳转
   import {useRoute, useRouter} from "vue-router";
   import model from './model.vue';
+
+  import simple from './simple.vue';
 
   export default {
     name: 'HelloWorld',
@@ -155,7 +172,7 @@
       }
     },
     components: {
-      model,
+      model,simple
     }
   }
 </script>
@@ -164,6 +181,7 @@
   .main {
     width: 700px;
     margin: auto;
+    letter-spacing: 1px;
   }
 
   h2 {
